@@ -121,6 +121,12 @@ export default function App() {
     fetchPortfolioData();
   }, []);
 
+  useEffect(() => {
+    if (data?.profile?.hero?.name) {
+      document.title = `${data.profile.hero.name} | Frontend Engineer`;
+    }
+  }, [data]);
+
   return (
     <Router>
       {/* Background Starfield */}
