@@ -61,6 +61,7 @@ function PortfolioView({ data, loading }) {
         hasProjects={projects && projects.length > 0}
         hasExperience={experiences && experiences.length > 0}
         hasEducation={(educations && educations.length > 0) || (certifications && certifications.length > 0)}
+        hasTestimonials={testimonials && testimonials.length > 0}
         resumeUrl={profile?.hero?.resumeUrl}
       />
 

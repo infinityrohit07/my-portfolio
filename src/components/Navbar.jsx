@@ -10,10 +10,11 @@ const navLinks = [
   { name: 'Projects', id: 'projects' },
   { name: 'Experience', id: 'experience' },
   { name: 'Education', id: 'education' },
+  { name: 'Testimonials', id: 'testimonials' },
   { name: 'Contact', id: 'contact' },
 ];
 
-export default function Navbar({ brandName = 'Alex Carter', hasSkills = true, hasProjects = true, hasExperience = true, hasEducation = true, resumeUrl = '' }) {
+export default function Navbar({ brandName = 'Alex Carter', hasSkills = true, hasProjects = true, hasExperience = true, hasEducation = true, hasTestimonials = true, resumeUrl = '' }) {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('hero');
   const [scrolled, setScrolled] = useState(false);
@@ -27,6 +28,7 @@ export default function Navbar({ brandName = 'Alex Carter', hasSkills = true, ha
     if (link.id === 'projects') return hasProjects;
     if (link.id === 'experience') return hasExperience;
     if (link.id === 'education') return hasEducation;
+    if (link.id === 'testimonials') return hasTestimonials;
     return true;
   });
 
