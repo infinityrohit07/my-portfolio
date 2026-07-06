@@ -450,9 +450,8 @@ app.post('/api/portfolio/resume', auth, upload.single('resume'), async (req, res
     const uploadStream = cloudinary.uploader.upload_stream(
       {
         folder: 'portfolio_resumes',
-        resource_type: 'auto',
-        public_id: 'resume_' + Date.now(),
-        access_mode: 'public'
+        resource_type: 'raw',
+        public_id: 'resume_' + Date.now() + '.pdf'
       },
       async (error, result) => {
         if (error) {
