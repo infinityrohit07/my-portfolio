@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Code2, Lock } from 'lucide-react';
+import { Menu, X, Code2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -128,14 +128,6 @@ export default function Navbar({ brandName = 'Alex Carter', hasSkills = true, ha
               </a>
             )}
 
-            {/* CMS Dashboard Link */}
-            <Link
-              to="/admin"
-              className="p-2 ml-2 rounded-lg text-slate-400 hover:text-brand-cyan hover:bg-slate-900/60 transition-all cursor-pointer"
-              title="CMS Admin Dashboard"
-            >
-              <Lock className="w-4.5 h-4.5" />
-            </Link>
           </div>
 
           {/* Mobile menu button */}
@@ -186,14 +178,6 @@ export default function Navbar({ brandName = 'Alex Carter', hasSkills = true, ha
                 </a>
               )}
 
-              <Link
-                to="/admin"
-                onClick={() => setIsOpen(false)}
-                className="w-full text-left px-4 py-3 rounded-xl text-base font-medium text-slate-400 hover:bg-slate-905 hover:text-brand-cyan transition-colors flex items-center gap-2 cursor-pointer"
-              >
-                <Lock className="w-4 h-4" />
-                <span>Admin CMS</span>
-              </Link>
             </div>
           </motion.div>
         )}
