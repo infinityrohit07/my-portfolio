@@ -41,6 +41,13 @@ export default function Navbar({ brandName = 'Alex Carter', hasSkills = true, ha
         setScrolled(false);
       }
 
+      // Check if user is scrolled to the very bottom of the page
+      const isAtBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 50;
+      if (isAtBottom && visibleLinks.length > 0) {
+        setActiveSection(visibleLinks[visibleLinks.length - 1].id);
+        return;
+      }
+
       // Determine active section based on scroll position
       const scrollPosition = window.scrollY + 120; // offset for nav height
 
@@ -60,7 +67,7 @@ export default function Navbar({ brandName = 'Alex Carter', hasSkills = true, ha
     handleScroll(); // run once on mount
 
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [hasSkills, hasProjects, hasExperience, hasEducation, hasTestimonials]);
 
   const handleLinkClick = (id) => {
     setIsOpen(false);
